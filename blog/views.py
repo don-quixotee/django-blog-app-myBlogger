@@ -47,7 +47,7 @@ class PostListView(ListView):
  
 
 
-class PostDetailView(LoginRequiredMixin, FormMixin, DetailView):
+class PostDetailView(FormMixin, DetailView):
     model = Post
     form_class = CommentForm
     template_name = 'blog/blog-post.html'
@@ -161,28 +161,6 @@ class profileDetailView(LoginRequiredMixin, DetailView):
         return context
         
 
-
-
-# @login_required    
-# def SearchListView(request):
-    # form = SearchForm()
-    # query = None
-    # results = []
-    # category = Category.objects.all()
-    # if 'query' in request.GET:
-    #     form = SearchForm(request.GET)
-    #     if form.is_valid():
-    #         query = form.cleaned_data['query']
-    #         search_vector = SearchVector('title',weight='A')+SearchVector('content', weight='B')
-    #         search_query =SearchQuery(query)
-    #         posts = Post.publish.annotate(rank=SearchRank(search_vector, search_query)).filter(rank__gte=0.5).order_by('-rank')
-    #         return render(request, 'blog/stories.html', context={'form':form,'query':query, 'posts':posts , 'category':category})
-
-
-    # else:
-
-    #     next = request.POST.get('next', '/')
-    #     HttpResponseRedirect(next)
 
 
 
