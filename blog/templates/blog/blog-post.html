@@ -73,11 +73,15 @@
             <form method="POST">
                 {{form.as_p}}
                 {% csrf_token %}
+                {% if user.is_authenticated %}
                 <input class="btn btn-outline-secondary" type="submit" value=" response">
+                {% endif %}
             </form>
+            
         </div>
         <hr>
         <br>
+
         <div style="width:100%;">
             <h3> Responses from the other user</h3>
 
