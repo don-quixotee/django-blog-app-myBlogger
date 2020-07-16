@@ -26,7 +26,6 @@ class PostListView(ListView):
     model = Post
     context_object_name = 'posts'
     template_name = 'blog/stories.html'
-    form_class = SearchForm
 
     def get(self,request, id=None):
         posts = Post.objects.filter(status='P')
@@ -40,12 +39,6 @@ class PostListView(ListView):
         context = {'posts':posts,'category':category}
         return render(request,"blog/stories.html",context)
     
-
-
-
-
- 
-
 
 class PostDetailView(FormMixin, DetailView):
     model = Post
