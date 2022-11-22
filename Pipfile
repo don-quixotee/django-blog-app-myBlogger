@@ -22,7 +22,7 @@ six = "==1.15.0"
 sqlparse = "==0.3.1"
 whitenoise = "==5.1.0"
 Django = "==3.0.5"
-Pillow = "==7.1.2"
+Pillow = "==9.3.0"
 
 [requires]
 python_version = "3.7"
